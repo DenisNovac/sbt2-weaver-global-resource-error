@@ -1,5 +1,7 @@
 # sbt 2: forked tests are split across JVMs, weaver `GlobalResource` is not found
 
+Related issue: https://github.com/typelevel/weaver-test/issues/385
+
 Minimal reproduction. A weaver `GlobalResource` is initialised in one forked JVM, but one of the suites runs in
 **another** forked JVM, so `global.getOrFailR` fails with `ResourceNotFound`.
 
